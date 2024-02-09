@@ -1,0 +1,136 @@
+@import url(./typography.css);
+
+*{
+    padding: 0;
+    margin: 0;
+
+    text-decoration: none;
+    list-style: none;
+}
+
+a{
+    color: inherit;
+}
+
+.container{
+    max-width: 1920px;
+}
+
+/* Header */
+.header-box{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    background: linear-gradient(-90deg, #02C6ED 0%, #02EDC8 100%), #232323;
+}
+
+.header-title{
+    padding: 40px 0 0 0;
+}
+
+.header-form{
+    padding: 0 0 50px 0;
+    display: flex;
+}
+
+.header-input-text{
+    padding: 15px 57px 15px 15px;
+    background: #fff;
+
+    border-radius: 6px;
+    border: 0 solid;
+    width: 460px;
+    outline: none;
+}
+
+.input-submit{
+    padding: 15px 26px;
+    margin-left: -144px;
+
+    background: #ed3052;
+    border-radius: 6px;
+    border: 0 solid;
+
+    cursor: pointer;
+}
+
+/* Main */
+.main{
+    display: flex;
+    justify-content: center;
+    
+    height: 599px;
+}
+
+.section{
+    margin: auto auto;
+}
+
+.card-box{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+
+    position: relative;
+
+    
+    width: 360px;
+    
+    padding: 30px;
+    
+    background: #fff;
+    box-shadow: 0px 5px 20px rgba(27, 108, 114, 0.25);
+    border-radius: 6px;
+}
+
+.card-box::before{
+    content: "";
+    position: absolute;
+    
+    width: calc(100% - 20px);
+    height: 100%;
+
+    z-index: -1;
+    left: 10px;
+    top: 10px;
+
+    background: #fff;
+    box-shadow: 0px 5px 20px rgba(27, 108, 114, 0.25);
+    border-radius: 6px;
+}
+
+.section-title-text span{
+    display: inline-block;
+    vertical-align: text-top;
+
+    padding: 3px 5px;
+
+    background: #E5464F;
+    border-radius: 6px;
+}
+
+.card-weather{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+/* Footer */
+.footer{
+    width: 100%;
+}
+
+.footer-box{
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+
+    background: linear-gradient(-90deg, #02C6ED 0%, #02EDC8 100%), #232323;
+
+    padding: 50px 50px 50px 50px;
+}

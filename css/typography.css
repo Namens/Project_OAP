@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+.h1-title-text, .h2-footer-text{
+    font-family: Rubik;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal; 
+    color: #FFF;
+}
+
+.h2-footer-text{
+    font-size: 30px;
+}
+
+.input-text{
+    font-family: Rubik;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal; 
+    color: #000;
+}
+
+.input-submit, 
+.section-title-text-h2, 
+.section-text-footer-p{
+    font-family: Rubik;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal; 
+    color: #FFF;
+}
+
+.section-title-text-h2{
+    font-size: 28px;
+    color: #000;
+}
+
+.section-title-text-h2 span{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    color: #fff;
+}
+
+.section-text-p{
+    color: #000;
+    font-family: Rubik;
+    font-size: 92px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.section-text-p sup{
+    font-size: 50%;
+}
+
+.section-text-footer-p{
+    font-weight: 400;
+    color: #000;
+}

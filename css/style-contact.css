@@ -1,0 +1,69 @@
+@import url(./typography.css);
+
+*{
+    padding: 0;
+    margin: 0;
+
+    text-decoration: none;
+    list-style: none;
+}
+
+a{
+    color: inherit;
+}
+
+.container{
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+/* Main */
+.contact-box{
+    background: linear-gradient(-90deg, #02C6ED 0%, #02EDC8 100%), #232323;
+    border-radius: 10px;
+
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    margin-top: 200px;
+    padding: 50px;
+}
+
+
+.link-back{
+    position: relative;
+    right: 430px;
+    bottom: 25px;
+
+    width: 50px;
+}
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-input-text {
+    resize: none;
+    padding: 10px;
+    background: #fff;
+
+    border-radius: 6px;
+    border: 0 solid;
+    width: 460px;
+    outline: none;
+}
+
+.contact-submit{
+    padding: 15px 26px;
+
+    background: #ed3052;
+    border-radius: 6px;
+    border: 0 solid;
+
+    cursor: pointer;
+}
