@@ -66,6 +66,7 @@ a{
 
 .section{
     margin: auto auto;
+    width: 360px;
 }
 
 .card-box{
@@ -74,9 +75,6 @@ a{
     flex-direction: column;
 
     position: relative;
-
-    
-    width: 360px;
     
     padding: 30px;
     
