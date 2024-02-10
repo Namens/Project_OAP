@@ -1,91 +1,79 @@
-const apiKey = '3199883551d04ac69be164059240602'
-
-
-/* Получаем название из города */
-
+const apiKey = 'b45887a7acfd4a448a1125042240902'
 const form = document.querySelector('#form')
 const input = document.querySelector('#inputCity')
-let city
 const header = document.querySelector('.header')
 
 
+function showError (errorMessage) {
 
-function removeCard() {
-    const prevCard = document.querySelector('.card-front')
+}
+
+
+function removeCard () {
+
+}
+
+function showCard () {
+
+}
+
+
+
+form.onsubmit = function (event) {
+    event.preventDefault()
+
+    let city = input.value.trim()
+    
+    const prevCard = document.querySelector('.card-box')
+
     if (prevCard) prevCard.remove()
-}
-
-
-function showCard (name, country, temp_c, condition) {
-    
-    const html = `<div class="card-front">
-    <div class="section-text">
-    
-    <div class="section-title">
-    <h2 class="section-title-text section-title-text-h2">${name}</h2>
-    <span class="section-title-image"> ${country} </span>
-    </div>
-    
-    <p class="section-text-main section-text-p">${temp_c}°c</p>
-    
-    <p class="section-text-footer section-text-footer-p">${condition}</p>
-    </div>
-    
-    <img src="./images/icons_svg/icon-weather.svg" alt="weather" class="icon-weather">
-    
-    </div>`
-    
-    
-    header.insertAdjacentHTML('afterend', html)
-}
 
 
 
 
 
-form.onsubmit = function(event){
-    // отменяем отправку формы
-    event.preventDefault();
-    
-    //    берём значение из инпута, trim убирает пробелы
-    city = input.value.trim();
-    
-    // делаем запрос на сервер
     const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
-    
-    // выполнение запроса
+
+
     fetch(url).then((response) => {
         return response.json()
     }).then((data) => {
-        
-        
-        
 
-        // проверка на ошибку
         if (data.error) {
-            
-            removeCard()
-            const html = `<div class="card-front">${'Takova goroda net'}</div>`
-            header.insertAdjacentHTML('afterend', html)
-            
 
-        }else{
+        if (prevCard) prevCard.remove()
 
-            removeCard()
+        const html = `<main class="main">
+        <section class="section">
+            <div class="card-box">${data.error.message}</div>
+        </section>
+        </main>`
+        
+        
+        header.insertAdjacentHTML ('afterend', html)
 
-            showCard(
-                data.location.name, 
-                data.location.country, 
-                data.current.temp_c, 
-                data.current.condition.text
-            )
-            
-        }
-        
-        
-        
-        
-    })
+        } else {
+
+            const html = `    <main class="main">
+            <section class="section">
+                <div class="card-box">
+                    <h2 class="section-title-text section-title-text-h2">${data.location.name} <span>${data.location.country}</span></h2>
+                      
+                    <div class="card-weather">
+                        <div class="section-text-main section-text-p">${data.current.temp_c}<sup>°с</sup></div>
+                        <img src="./images/icons_svg/icon-weather.svg" alt="weather" class="icon-weather">
+                    </div>
+                        
+                    <div class="section-text-footer section-text-footer-p">${data.current.condition.text}}</div>
+                </div>
+            </section>
+    </main>`
     
-    console.log(data)
+            header.insertAdjacentHTML ('afterend', html)
+
+
+        }
+
+
+    })
 }
