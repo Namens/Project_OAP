@@ -1,10 +1,6 @@
 import conditions from './conditions.js'
 
-
-
 const apiKey = 'b45887a7acfd4a448a1125042240902'
-
-
 
 const form = document.querySelector('#form')
 const input = document.querySelector('#inputCity')
@@ -16,7 +12,6 @@ function removeCard () {
 	if (prevCard) prevCard.remove();
 }
 
-
 function showError (errorMessage) {
     const html = `<main class="main">
     <section class="section">
@@ -26,8 +21,6 @@ function showError (errorMessage) {
     
     header.insertAdjacentHTML ('afterend', html)
 }
-
-
 
 function showCard (name, country, temp_c, condition, imgPath) {
 
@@ -57,15 +50,12 @@ async function getWeather(city) {
     return data
 }
 
-
-
 form.onsubmit = async function (event) {
     event.preventDefault()
     
     let city = input.value.trim()
     const data = await getWeather(city) // получаем данные с сервера
     
-
     if (data.error) {
 
         removeCard()
@@ -75,13 +65,10 @@ form.onsubmit = async function (event) {
 
         removeCard()
 
-    
         const info = conditions.find((obj) => obj.code === data.current.condition.code)
-
         const filePath = './images/' + (data.current.is_day ? 'day' : 'night') + '/'
         const fileName = (data.current.is_day ? info.day : info.night) + '.png'
         const imgPath = filePath + fileName
-
 
         showCard(
             data.location.name,
