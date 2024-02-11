@@ -1,4 +1,10 @@
+import conditions from './conditions.js'
+
+
+
 const apiKey = 'b45887a7acfd4a448a1125042240902'
+
+
 
 const form = document.querySelector('#form')
 const input = document.querySelector('#inputCity')
@@ -23,7 +29,7 @@ function showError (errorMessage) {
 
 
 
-function showCard (name, country, temp_c, condition) {
+function showCard (name, country, temp_c, condition, imgPath) {
 
     const html = `    <main class="main">
     <section class="section">
@@ -32,7 +38,7 @@ function showCard (name, country, temp_c, condition) {
               
             <div class="card-weather">
                 <div class="section-text-main section-text-p">${temp_c}<sup>°с</sup></div>
-                <img src="./images/icons_svg/icon-weather.svg" alt="weather" class="icon-weather">
+                <img src="${imgPath}" alt="weather" class="icon-weather">
             </div>
                 
             <div class="section-text-footer section-text-footer-p">${condition}</div>
@@ -52,6 +58,7 @@ async function getWeather(city) {
 }
 
 
+
 form.onsubmit = async function (event) {
     event.preventDefault()
     
@@ -68,13 +75,23 @@ form.onsubmit = async function (event) {
 
         removeCard()
 
+    
+        const info = conditions.find((obj) => obj.code === data.current.condition.code)
+
+        const filePath = './images/' + (data.current.is_day ? 'day' : 'night') + '/'
+        const fileName = (data.current.is_day ? info.day : info.night) + '.png'
+        const imgPath = filePath + fileName
+
+
         showCard(
             data.location.name,
             data.location.country,
             data.current.temp_c,
-            data.current.condition.text,
+            data.current.is_day 
+            ? info.languages[23]['day_text']
+            : info.languages[23]['night_text'],
+            imgPath,
         )
-
         }
 
 

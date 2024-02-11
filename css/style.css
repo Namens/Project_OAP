@@ -35,6 +35,12 @@ a{
     display: flex;
 }
 
+.icon-weather {
+    width: 120px;
+    height: 120px;
+
+}
+
 .header-input-text{
     padding: 15px 57px 15px 15px;
     background: #fff;
