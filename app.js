@@ -1,5 +1,6 @@
 import conditions from './conditions.js'
 
+
 const apiKey = 'b45887a7acfd4a448a1125042240902'
 
 const form = document.querySelector('#form')
@@ -8,7 +9,7 @@ const header = document.querySelector('.header')
 
 
 function removeCard () {
-    const prevCard = document.querySelector('.card-box');
+    const prevCard = document.querySelector('.main');
 	if (prevCard) prevCard.remove();
 }
 

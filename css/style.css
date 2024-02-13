@@ -72,7 +72,7 @@ a{
 
 .section{
     margin: auto auto;
-    width: 360px;
+    min-width: 360px;
 }
 
 .card-box{
@@ -119,6 +119,7 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 30px;
 }
 
 
