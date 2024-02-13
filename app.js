@@ -71,6 +71,7 @@ form.onsubmit = async function (event) {
         const fileName = (data.current.is_day ? info.day : info.night) + '.png'
         const imgPath = filePath + fileName
 
+
         showCard(
             data.location.name,
             data.location.country,
@@ -84,3 +85,4 @@ form.onsubmit = async function (event) {
 
 
 }
+
